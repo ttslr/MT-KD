@@ -1,0 +1,1626 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="google-site-verification" content="ftFOlJETX-2KNjaPh8W6s8lhigItRuu9fOmjHZZ0nY0" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <title>MTKD</title>
+</head>
+<style type="text/css">
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  audio {
+    width: 100%;
+  }
+
+  thead>tr>th:first-child {
+    width: 96px;
+  }
+
+  @media (max-width: 767px) {
+    .big-screen {
+      display: none;
+    }
+  }
+
+  @media (min-width: 767px) {
+    .small-screen {
+      display: none;
+    }
+  }
+</style>
+
+
+
+
+<body>
+  <header class="header">
+    <div class="jumbotron bg-secondary text-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+ 
+            <h1><a class="text-light">Decoding Knowledge Transfer for <br> Neural Text-to-Speech Training</h1><br>
+             <font size=5><span style="color:#000000"> Authors: Rui Liu, Berrak Sisman, Guanglai Gao and Haizhou Li </font>  </a>   
+            <p>
+              <div class="row">
+              </div>
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row" id="result">
+        <div class="col-md-12">
+        	<h5>Abstract:</h5> 
+        	Neural end-to-end text-to-speech (TTS) is superior to conventional statistical methods in many ways. However, the exposure bias problem, that arises from the mismatch between training and inference process in autoregressive models, remains an issue. It often leads to performance degradation, especially for out-of-domain test data.  To address this problem,  we study a novel decoding knowledge transfer strategy, and propose a multi-teacher knowledge distillation (MT-KD) network for Tacotron-based TTS model. The idea is to pre-train two Tacotron2-based TTS teacher models in teacher forcing and scheduled sampling modes, and transfer the pre-trained knowledge to a student model that performs free running decoding. In this way,  the student model learns to emulate the behaviors of the two teachers, at the same time, minimizing the mismatch between training and run-time inference. Experiments on both Chinese and English data show that MT-KD system consistently outperforms the competitive baselines in terms of naturalness, robustness and expressiveness for in-domain and out-of-domain test data. Furthermore, we show that knowledge distillation outperforms adversarial learning and data augmentation in addressing the exposure bias problem. <br>
+<br>
+<br>
+          <div style="text-align: center; width: 1100px; border: green solid 1px;">
+          	<img align="center" src="model.png"  width="1000" height="420"  />
+ 				<br>
+        <br>
+                    Fig. 1: An illustration of our multi-teacher knowledge distillation (MT-KD) scheme for end-to-end TTS. The blue box means its parameters are initialized by random values, while the green box means its parameters are initialized by the pretrained parameters from Phase I.
+                    
+          </div>
+ 
+
+
+			<br><br><br>
+
+          
+                     <br>
+                     The in-domian and out-of-domain set can be found at <a href="https://ttslr.github.io/MT-KD/inference_set.txt" target="_blank">here</a>.
+          <br>
+                  
+  
+                   
+                     <br /><br />
+                     <h3>English Speech Samples:</h3>
+                     <br />
+                     (GL: Griffin-Lim algorithm <span style="color:blue"><b>[1]</b></span>; PW: Parallel-WaveGAN vocoder <span style="color:blue"><b>[2]</b></span>)
+                     <br />
+      <br>
+      <div style="overflow-x: auto; width:100%;">
+      <!--  Naturalness Evaluation -->
+                    <table class="table">
+                      
+                      <tbody>
+                                
+                                
+                                <tr>
+                                  <th style="width:20px;vertical-align:middle;">  </th>
+                                    <th style="text-align:center;">  TF <span style="color:blue">[3]</span></th>
+                                    <th style="text-align:center;">   SS <span style="color:blue">[4]</span> </th>
+                                     <th style="text-align:center;">   TF-GAN <span style="color:blue">[5]</span></th>
+                                    <th style="text-align:center;">   SS-GAN <span style="color:blue">[5]</span> </th>
+                                    <th style="text-align:center;">  <span style="color:blue">MT-KD</span></th>
+                                     <th style="text-align:center;">   TF-KD <span style="color:blue">[6]</span></th>
+                                    <th style="text-align:center;">   SS-KD </th>
+                                    <th style="text-align:center;">   Ground Truth </th>
+
+                                    
+                                </tr>
+
+
+                                <tr>
+                                  <td colspan=9 align="center" style="text-align:middle;"><font size="4">
+                                  <b>Naturalness Evaluation</b></font>
+                                  </td>
+                                </tr>
+                                 
+                              <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=9 >(1) Input Text: But which must certainly have come from the study of the twelfth or even the eleventh century MSS.</td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="samples/en-demo/1/GL/wavs/028.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/2/GL/wavs/028.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/3/GL/wavs/028.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/4/GL/wavs/028.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/5/GL/wavs/028.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/6/GL/028.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/7/GL/028.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/GT/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+                                   
+                                    <audio controls>
+                                      <source src="samples/en-demo/1/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/2/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/3/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/4/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/5/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/1/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/1/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                     
+                                  </td>
+                                  </tr>
+
+                                   <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=9 >(2) Input Text: They discarded this for a more completely Roman and far less beautiful letter.</td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                   <td>
+
+                                    <audio controls>
+                                      <source src="samples/en-demo/1/GL/wavs/030.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/2/GL/wavs/030.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/3/GL/wavs/030.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/4/GL/wavs/030.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/5/GL/wavs/030.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/6/GL/030.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/7/GL/030.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/GT/sample7_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+                                   
+                                    <audio controls>
+                                      <source src="samples/en-demo/1/PW/sample7_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/2/PW/sample7_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/3/PW/sample7_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/4/PW/sample7_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/5/PW/sample7_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/6/PW/sample2_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/7/PW/sample2_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                   
+                                  </td>
+                                  </tr>
+
+                                <tr>
+                                  <td colspan=9 align="center" style="text-align:middle;"><font size="4">
+                                  <b>Robustness Evaluation</b></font>
+                                  </td>
+                                </tr>
+
+                                   <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=9 >(3) Input Text: src backslash mapi backslash t n e f d e c dot c dot o l d backslash backslash m o z a r t f one backslash e x five. </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="samples/en-demo/1/GL/wavs/130.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/2/GL/wavs/130.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/3/GL/wavs/130.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/4/GL/wavs/130.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/5/GL/wavs/130.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/6/GL/130.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/7/GL/130.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+                                   
+                                    <audio controls>
+                                      <source src="samples/en-demo/1/PW/sample11_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/2/PW/sample11_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/3/PW/sample11_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/4/PW/sample11_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/5/PW/sample11_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/6/PW/sample3_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/7/PW/sample3_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+
+                                   <!-- One Line -->
+ 
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=9 >(4) Input Text: copy backslash backslash j o h n f a n four backslash scratch backslash M i c r o s o f t dot S h a r e P o i n t dot. </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="samples/en-demo/1/GL/wavs/131.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/2/GL/wavs/131.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/3/GL/wavs/131.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/4/GL/wavs/131.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/5/GL/wavs/131.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/6/GL/131.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/7/GL/131.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+                                   
+                                    <audio controls>
+                                      <source src="samples/en-demo/1/PW/sample12_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/2/PW/sample12_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/3/PW/sample12_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/4/PW/sample12_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/5/PW/sample12_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/6/PW/sample4_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/7/PW/sample4_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+
+
+<tr>
+                                  <td colspan=9 align="center" style="text-align:middle;"><font size="4">
+                                  <b>Expressiveness Evaluation</b></font>
+                                  </td>
+                                </tr>
+
+
+                                   <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=9 >(5) Input Text: For short, <span style="color:red"><b>|</b></span> do not remember every detail, <span style="color:red"><b>|</b></span> every mood. <span style="color:red"><b>|</b></span> How can I believe that there is still pure love in this world?</td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="samples/en-demo/1/GL/wavs/176.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/2/GL/wavs/176.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/3/GL/wavs/176.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/4/GL/wavs/176.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/5/GL/wavs/176.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/6/GL/176.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/7/GL/176.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+                                   
+                                    <audio controls>
+                                      <source src="samples/en-demo/1/PW/sample13_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/2/PW/sample13_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/3/PW/sample13_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/4/PW/sample13_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/5/PW/sample13_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/6/PW/sample5_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/7/PW/sample5_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+                                   <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=9 >(6) Input Text: Give so much time to improving yourself <span style="color:red"><b>|</b></span> that you won't have time to criticize others.</td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="samples/en-demo/1/GL/wavs/177.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/2/GL/wavs/177.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/3/GL/wavs/177.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/4/GL/wavs/177.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/5/GL/wavs/177.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/6/GL/177.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/7/GL/177.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+                                   
+                                    <audio controls>
+                                      <source src="samples/en-demo/1/PW/sample14_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/2/PW/sample14_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/3/PW/sample14_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/4/PW/sample14_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/5/PW/sample14_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/6/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/en-demo/7/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+
+
+
+                      </tbody>
+                    </table>
+                    </div>
+
+
+
+                    
+
+
+  
+                   
+                     <br /><br />
+                     <h3>Chinese Speech Samples:</h3>
+                     <br />
+                   (GL: Griffin-Lim algorithm <span style="color:blue"><b>[1]</b></span>; PW: Parallel-WaveGAN vocoder <span style="color:blue"><b>[2]</b></span>)
+                     <br />
+      <br>
+      <div style="overflow-x: auto; width:100%;">
+      <!--  Naturalness Evaluation -->
+                    <table class="table">
+                      
+                      <tbody>
+                                
+                                
+                                <tr>
+                                  <th style="width:20px;vertical-align:middle;">  </th>
+                                    <th style="text-align:center;">  TF <span style="color:blue">[3]</span></th>
+                                    <th style="text-align:center;">   SS <span style="color:blue">[4]</span> </th>
+                                     <th style="text-align:center;">   TF-GAN <span style="color:blue">[5]</span></th>
+                                    <th style="text-align:center;">   SS-GAN <span style="color:blue">[5]</span> </th>
+                                    <th style="text-align:center;">   <span style="color:blue"> MT-KD</span></th>
+                                     <th style="text-align:center;">   TF-KD <span style="color:blue">[6]</span></th>
+                                    <th style="text-align:center;">   SS-KD </th>
+                                    <th style="text-align:center;">   Ground Truth </th>
+
+
+                                    
+                                </tr>
+
+
+                                <tr>
+                                  <td colspan=9 align="center" style="text-align:middle;"><font size="4">
+                                  <b>Naturalness Evaluation</b></font>
+                                  </td>
+                                </tr>
+                                 
+                              <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=9 >(1) 这句话像从天而降，吓得四周一片寂静。</td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/GL/wavs/035.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/2/GL/wavs/035.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/3/GL/wavs/035.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/4/GL/wavs/035.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/5/GL/wavs/035.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/6/GL/035.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/7/GL/035.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/GT/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+                                   
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/2/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/3/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/4/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/5/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                     
+                                  </td>
+                                  </tr>
+
+                                   <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=9 >(2) 男友：是这样，我记得，我是在一个月色朦胧的晚上向你求的婚。</td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/GL/wavs/002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/2/GL/wavs/002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/3/GL/wavs/002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/4/GL/wavs/002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/5/GL/wavs/002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/6/GL/002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/7/GL/002.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/GT/sample1_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+                                   
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/PW/sample1_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/2/PW/sample1_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/3/PW/sample1_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/4/PW/sample1_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/5/PW/sample1_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/PW/sample1_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/PW/sample1_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                     
+                                  </td>
+                                  </tr>
+
+
+ <tr>
+                                  <td colspan=9 align="center" style="text-align:middle;"><font size="4">
+                                  <b>Robustness Evaluation</b></font>
+                                  </td>
+                                </tr>
+
+
+                                   <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=9 >(3) ... 这确实为他提供了一个卸下心里负担的方法啊。</td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/GL/wavs/205.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/2/GL/wavs/205.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/3/GL/wavs/205.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/4/GL/wavs/205.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/5/GL/wavs/205.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/6/GL/205.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/7/GL/205.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+                                   
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/PW/sample12_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/2/PW/sample12_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/3/PW/sample12_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/4/PW/sample12_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/5/PW/sample12_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/6/PW/sample3_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/7/PW/sample3_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+
+                                   <!-- One Line -->
+ 
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=9 >(4) ... 我至今好像还做不到。</td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/GL/wavs/210.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/2/GL/wavs/210.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/3/GL/wavs/210.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/4/GL/wavs/210.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/5/GL/wavs/210.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/6/GL/210.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/7/GL/210.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+                                   
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/PW/sample14_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/2/PW/sample14_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/3/PW/sample14_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/4/PW/sample14_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/5/PW/sample14_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/6/PW/sample5_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/7/PW/sample5_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+
+
+<tr>
+                                  <td colspan=9 align="center" style="text-align:middle;"><font size="4">
+                                  <b>Expressiveness Evaluation</b></font>
+                                  </td>
+                                </tr>
+
+
+                                   <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=9 >(5) 在一个微信群看到一句话说：<span style="color:red"><b>|</b></span> 一个人成熟的重要标志 <span style="color:red"><b>|</b></span> 是在吃自助餐的时候 <span style="color:red"><b>|</b></span> 能不吃撑。</td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/GL/wavs/209.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/2/GL/wavs/209.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/3/GL/wavs/209.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/4/GL/wavs/209.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/5/GL/wavs/209.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/6/GL/209.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/7/GL/209.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                   <td>
+                                   
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/PW/sample13_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/2/PW/sample13_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/3/PW/sample13_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/4/PW/sample13_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/5/PW/sample13_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/6/PW/sample4_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/7/PW/sample4_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+                                   <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=9 >(6) 神龟虽寿，<span style="color:red"><b>|</b></span> 犹有竟时。</td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/GL/wavs/258.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/2/GL/wavs/258.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/3/GL/wavs/258.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/4/GL/wavs/258.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/5/GL/wavs/258.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/6/GL/258.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/7/GL/258.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                   <td>
+                                   
+                                    <audio controls>
+                                      <source src="samples/cn-demo/1/PW/sample15_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/2/PW/sample15_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/3/PW/sample15_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/4/PW/sample15_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/5/PW/sample15_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/6/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="samples/cn-demo/7/PW/sample6_gen.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td style="text-align:center;">
+                                    ____
+                                  </td>
+                                  </tr>
+
+
+
+
+                      </tbody>
+                    </table>
+                    </div>
+ 
+
+                  
+                 
+        </div>
+      </div>
+      <hr>
+       <div class="row" id="ref">
+        <div class="col">
+          <h5>References</h5>
+          [1] Griffin, Daniel, and Jae Lim. Signal estimation from modified short-time Fourier transform. In IEEE Transactions on Acoustics, Speech, and Signal Processing, 1984, pp. 236-243.
+          <br>
+
+          [2] Yamamoto, Ryuichi, Eunwoo Song, and Jae-Min Kim. Parallel WaveGAN: A fast waveform generation model based on generative adversarial networks with multi-resolution spectrogram. In ICASSP 2020, pp. 6199-6203.
+
+          <br>
+          [3] Shen, Jonathan, et al. Natural TTS synthesis by conditioning wavenet on mel spectrogram predictions. In ICASSP 2018, pp. 4779-4783.
+          <br>
+
+          [4] Bengio S, Vinyals O, Jaitly N, Shazeer N. Scheduled sampling for sequence prediction with recurrent Neural networks. In NeurIPS 2015, pp. 1171-1179.
+          <br>
+
+          [5] Guo, Haohan, et al. A New GAN-based end-to-end TTS training algorithm. In Interspeech 2019, pp. 1288-1292.
+          <br>
+
+          [6] Liu, Rui, et al. Teacher-student training for robust tacotron-based TTS. In ICASSP 2020, pp. 6274-6278.
+          <br>
+
+    
+        
+        
+        </div>
+      </div>
+    </div>
+
+
+    <div align="center" style="margin:auto;padding-top:10px">
+            <div style="width:20%">
+               <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=LxpFwJFfJvpZOpszbax41jw4R26mqh_mFzNEo7Vb0E8&cl=ffffff&w=a"></script>
+            </div>
+        </div>
+<br><br>
+
+
+
+  </main>
+  <footer class="bg-secondary text-light mt-4 pt-3 pb-2 ">
+    <div class="container">
+      <p class="text-center">
+      
+      </p>
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
