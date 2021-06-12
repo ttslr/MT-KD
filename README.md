@@ -1,15 +1,15 @@
-# GraphSpeech
+# MT-KD
 
-__"GraphSpeech: Syntax-aware Graph Attention Network For Neural Speech Synthesis"__
+__"Decoding Knowledge Transfer for Text-to-Speech Training"__
 
-Authors: Rui Liu, Berrak Sisman and Haizhou Li
+Authors: Rui Liu, Berrak Sisman, Guanglai Gao and Haizhou Li
 
-This paper was submiteed to ICASSP2021. 
+This paper was submiteed to IEEE/ACM Transactions on Audio, Speech, and Language Processing.
 
 ## Speech samples
 
 
-Speech samples are available at [demo page](https://ttslr.github.io/GraphSpeech/).
+Speech samples are available at [demo page](https://ttslr.github.io/MT-KD/).
 
 
 
