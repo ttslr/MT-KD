@@ -1,6 +1,6 @@
 # MT-KD
 
-__"Decoding Knowledge Transfer for Text-to-Speech Training"__
+__"Decoding Knowledge Transfer for Neural Text-to-Speech Training"__
 
 Authors: Rui Liu, Berrak Sisman, Guanglai Gao and Haizhou Li
 
