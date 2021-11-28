@@ -87,7 +87,8 @@
                      The in-domian and out-of-domain set can be found at <a href="https://ttslr.github.io/MT-KD/cn_MTKD_inference_set.txt" target="_blank">cn</a>, <a href="https://ttslr.github.io/MT-KD/en_MTKD_inference_set.txt" target="_blank">en</a>.
           <br>
                   
-  
+  <br /><br />
+                     <h2><span style="color:blue">Main Results</span></h2>
                    
                      <br /><br />
                      <h3>English Speech Samples:</h3>
@@ -3618,12 +3619,1911 @@
                                       ____
                                     </td>
                                     </tr>
-                                    
+
+
+
+
 
                       </tbody>
                     </table>
                     </div>
  
+
+
+
+
+
+                     <br /><br />
+                     <h2><span style="color:blue">Sec. IV-V: Evaluation based on GST-Tacotron paradigm</span></h2>
+                     <h3>English Speech Samples:</h3>
+
+      <br>
+      <div style="overflow-x: auto; width:100%;">
+      <!--  Naturalness Evaluation -->
+                    <table class="table">
+
+                      <tbody>
+
+
+                                <tr>
+                                  <th style="width:20px;vertical-align:middle;">  </th>
+                                    <th style="text-align:center;">  GST-TF  </th>
+                                    <th style="text-align:center;">   GST-SS </th>
+                                    <th style="text-align:center;">  <span style="color:blue">GST-MT-KD</span></th>
+                                     <th style="text-align:center;">   GST-TF-KD </th>
+                                    <th style="text-align:center;">   GST-SS-KD </th>
+                                    <th style="text-align:center;">   Ground Truth </th>
+
+
+                                </tr>
+
+
+                                <tr>
+                                  <td colspan=7 align="center" style="text-align:middle;"><font size="4">
+                                  <b>Robustness Evaluation</b></font>
+                                  </td>
+                                </tr>
+
+                              <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(1) Input Text: that the forms of printed letters should follow more or less closely those of the written character, and they followed them very closely. </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-robust/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-robust/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-robust/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-robust/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-robust/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/en/GT/LJ001-0017.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-robust/1-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-robust/2-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-robust/5-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-robust/3-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-robust/4-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line -->
+
+
+                                    <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(2) Input Text: The first books were printed in black letter, i.e. the letter which was a Gothic development of the ancient Roman character </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-robust/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-robust/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-robust/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-robust/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-robust/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/en/GT/LJ001-0018.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-robust/1-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-robust/2-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-robust/5-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-robust/3-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-robust/4-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line -->
+
+
+                                    <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(3) Input Text: and which developed more completely and satisfactorily on the side of the "lower-case" than the capital letters;  </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-robust/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-robust/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-robust/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-robust/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-robust/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/en/GT/LJ001-0019.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-robust/1-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-robust/2-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-robust/5-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-robust/3-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-robust/4-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line -->
+
+
+                                    <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(4) Input Text: and was in fact the kind of letter used in the many splendid missals, psalters, etc., produced by printing in the fifteenth century.  </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-robust/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-robust/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-robust/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-robust/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-robust/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/en/GT/LJ001-0023.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-robust/1-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-robust/2-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-robust/5-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-robust/3-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-robust/4-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line -->
+
+
+                                    <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(5) Input Text: But the first Bible actually dated (which also was printed at Maintz by Peter Schoeffer in the year 1462)  </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-robust/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-robust/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-robust/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-robust/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-robust/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/en/GT/LJ001-0024.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-robust/1-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-robust/2-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-robust/5-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-robust/3-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-robust/4-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line -->
+
+
+
+
+                                  <tr>
+                                  <td colspan=7 align="center" style="text-align:middle;"><font size="4">
+                                  <b>Expressiveness Evaluation</b></font>
+                                  </td>
+                                </tr>
+
+                              <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(1) Input Text: It must be said that it is in no way like the transition type of Subiaco,  </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-expressive/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-expressive/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-expressive/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-expressive/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-expressive/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/en/GT/LJ001-0041.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-expressive/1-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-expressive/2-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-expressive/5-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-expressive/3-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-expressive/4-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line -->
+
+
+                                    <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(2) Input Text: A further development of the Roman letter took place at Venice. </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-expressive/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-expressive/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-expressive/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-1-robust/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-expressive/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/en/GT/LJ001-0043.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-expressive/1-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-expressive/2-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-expressive/5-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-expressive/3-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-2-expressive/4-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line -->
+
+
+                                    <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(3) Input Text: John of Spires and his brother Vindelin, followed by Nicholas Jenson, began to print in that city. </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-expressive/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-expressive/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-expressive/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-expressive/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-expressive/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/en/GT/LJ001-0044.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-expressive/1-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-expressive/2-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-expressive/5-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-expressive/3-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-3-expressive/4-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line -->
+
+
+                                    <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(4) Input Text: their type is on the lines of the German and French rather than of the Roman printers. </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-expressive/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-expressive/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-expressive/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-expressive/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-expressive/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/en/GT/LJ001-0046.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-expressive/1-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-expressive/2-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-expressive/5-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-expressive/3-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-4-expressive/4-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line -->
+
+
+                                    <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(5) Input Text: After his death in the "fourteen eighties," or at least by 1490, printing in Venice had declined very much; </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-expressive/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-expressive/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-expressive/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-expressive/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-expressive/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/en/GT/LJ001-0049.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-expressive/1-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-expressive/2-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-expressive/5-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-expressive/3-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/en/en_gst-5-expressive/4-vocoder.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line -->
+
+
+
+
+
+                      </tbody>
+                    </table>
+                    </div>
+
+
+
+ <br /><br />
+<h3>Chinese Speech Samples:</h3>
+
+      <br>
+      <div style="overflow-x: auto; width:100%;">
+      <!--  Naturalness Evaluation -->
+                    <table class="table">
+
+                      <tbody>
+
+
+                                <tr>
+                                  <th style="width:20px;vertical-align:middle;">  </th>
+                                    <th style="text-align:center;">  GST-TF  </th>
+                                    <th style="text-align:center;">   GST-SS </th>
+                                    <th style="text-align:center;">  <span style="color:blue">GST-MT-KD</span></th>
+                                     <th style="text-align:center;">   GST-TF-KD </th>
+                                    <th style="text-align:center;">   GST-SS-KD </th>
+                                    <th style="text-align:center;">   Ground Truth </th>
+
+
+                                </tr>
+
+
+                                <tr>
+                                  <td colspan=7 align="center" style="text-align:middle;"><font size="4">
+                                  <b>Robustness Evaluation</b></font>
+                                  </td>
+                                </tr>
+
+                              <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(1) Input Text: 遇到颠簸时，应听从乘务员的安全指令，回座位坐好。 </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-1/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-1/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-1/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-1/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-1/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/cn/GT/009918.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-1/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-1/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-1/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-1/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-1/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line -->
+
+
+                                   <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(2) Input Text: 他在后面呆惯了，怕自己一插身后的人会不满，不敢排进去。 </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-2/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-2/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-2/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-2/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-2/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/cn/GT/009919.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-2/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-2/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-2/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-2/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-2/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line --><!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(3) Input Text: 傍晚七个小人回来了，白雪公主说：你们就是我命中的七个小矮人吧。 </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-3/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-3/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-3/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-3/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-3/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/cn/GT/009920.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-3/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-3/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-3/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-3/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-3/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line --><!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(4) Input Text: 每一个“火箭官”都顺利地升上去了，冉冉若星光。 </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-4/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-4/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-4/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-4/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-4/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/cn/GT/009922.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-4/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-4/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-4/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-4/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-4/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line --><!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(5) Input Text: 一种表示商品所有权的财物证券，也称商品证券，如提货单、交货单。 </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-5/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-5/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-5/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-5/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-5/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/cn/GT/009899.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-5/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-5/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-5/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-5/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-robust-5/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line -->
+
+
+
+                                  <tr>
+                                  <td colspan=7 align="center" style="text-align:middle;"><font size="4">
+                                  <b>Expressiveness Evaluation</b></font>
+                                  </td>
+                                </tr>
+
+                              <!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(1) Input Text: 每天把牢骚拿出来晒晒太阳，心情就不会缺钙。 </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-1/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-1/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-1/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-1/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-1/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/cn/GT/009900.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-1/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-1/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-1/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-1/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-1/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line -->
+
+<!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(2) Input Text: 昨日，这名“伤者”与医生全部被警方依法刑事拘留。 </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-2/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-2/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-2/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-2/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-2/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/cn/GT/009901.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-2/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-2/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-2/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-2/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-2/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line --><!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(3) Input Text: 钱伟长想到上海来办学校是经过深思熟虑的。 </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-3/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-3/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-3/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-3/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-3/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/cn/GT/009902.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-3/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-3/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-3/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-3/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-3/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line --><!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(4) Input Text:  她见我一进门就骂，吃饭时也骂，骂得我抬不起头。 </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-4/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-4/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-4/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-4/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-4/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/cn/GT/009903.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-4/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-4/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-4/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-1/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-4/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line --><!-- One Line -->
+
+                                <tr>
+                                  <!-- <th colspan=8 align="center"> -->
+                                    <td colspan=7 >(5) Input Text:  李述德在离开之前，只说了一句 “柱驼杀父亲了”。 </td>
+                                  <!-- </th> -->
+                                </tr>
+
+                                 <tr>
+                                  <td style="vertical-align:middle;"><font size="2">GL</font></td>
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-5/1-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-5/2-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-5/5-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-5/3-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-5/4-gl.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td rowspan="2">
+                                    <audio controls>
+                                      <source src="GST-samples/cn/GT/009904.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  </tr>
+
+                                   <tr>
+                                    <td style="vertical-align:middle;"><font size="2">PW</font></td>
+
+
+                                  <td>
+
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-5/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                 <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-5/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-5/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-5/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="GST-samples/cn/gst-exp-5/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <!-- <td>
+                                  </td> -->
+                                  </tr>
+                                   <!-- One Line -->
+
+
+
+                      </tbody>
+                    </table>
+                    </div>
+
 
                   
                  
