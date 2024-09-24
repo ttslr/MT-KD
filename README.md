@@ -4,7 +4,7 @@
 
 Authors: Rui Liu, Berrak Sisman, Guanglai Gao and Haizhou Li
 
-This paper was accepted by IEEE/ACM Transactions on Audio, Speech, and Language Processing (IEEE/ACM TASLP) 2024.
+This paper was accepted by IEEE/ACM Transactions on Audio, Speech, and Language Processing (IEEE/ACM TASLP) 2022.
 
 ## Speech samples
 
